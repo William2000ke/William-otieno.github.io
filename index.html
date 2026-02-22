@@ -9,7 +9,8 @@
 
 <style>
 
-/* ===== GLOBAL STYLE ===== */
+/* ===== GLOBAL ===== */
+
 *{
 margin:0;
 padding:0;
@@ -19,24 +20,58 @@ scroll-behavior:smooth;
 }
 
 body{
-background: linear-gradient(135deg,#020617,#0f172a,#1e1b4b);
 color:white;
+background: radial-gradient(circle at top,#020617,#0f172a,#020617);
+overflow-x:hidden;
+}
+
+/* ===== BACKGROUND ANIMATION ===== */
+
+.background{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+.circle{
+position:absolute;
+border-radius:50%;
+filter:blur(60px);
+opacity:0.4;
+animation:float 10s infinite alternate;
+}
+
+.c1{
+width:400px;
+height:400px;
+background:#38bdf8;
+top:10%;
+left:15%;
+}
+
+.c2{
+width:500px;
+height:500px;
+background:#6366f1;
+bottom:10%;
+right:10%;
 }
 
 /* ===== NAVBAR ===== */
+
 nav{
 display:flex;
 justify-content:space-between;
 padding:20px 70px;
 position:fixed;
 width:100%;
-backdrop-filter:blur(12px);
-background:rgba(2,6,23,0.8);
+backdrop-filter:blur(15px);
+background:rgba(2,6,23,0.7);
 z-index:1000;
 }
 
 nav h2{
-font-weight:700;
 color:#38bdf8;
 }
 
@@ -45,14 +80,13 @@ display:flex;
 list-style:none;
 }
 
-nav ul li{
+nav li{
 margin-left:25px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-font-weight:500;
 transition:0.3s;
 }
 
@@ -60,32 +94,38 @@ nav a:hover{
 color:#38bdf8;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO ===== */
 
 .hero{
 min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:120px 70px 50px;
+padding:140px 70px 60px;
 animation:fadeIn 1.5s ease;
 }
 
 .hero-text{
-max-width:600px;
+max-width:650px;
 }
 
 .hero h1{
-font-size:3.5rem;
+font-size:3.8rem;
 }
 
 .hero span{
 color:#38bdf8;
 }
 
+#typing{
+margin-top:15px;
+color:#94a3b8;
+min-height:30px;
+}
+
 .hero p{
-margin-top:20px;
-line-height:1.7;
+margin-top:25px;
+line-height:1.8;
 opacity:0.9;
 }
 
@@ -96,53 +136,54 @@ width:320px;
 height:320px;
 border-radius:50%;
 object-fit:cover;
-box-shadow:0 0 40px rgba(56,189,248,0.5);
-animation:float 4s ease-in-out infinite;
+box-shadow:0 0 50px rgba(56,189,248,0.6);
+animation:float 5s ease-in-out infinite;
 }
 
-/* Button */
+/* Buttons */
 
 button{
 margin-top:30px;
-padding:14px 28px;
-background:linear-gradient(45deg,#38bdf8,#6366f1);
+padding:15px 30px;
 border:none;
+border-radius:10px;
+background:linear-gradient(45deg,#38bdf8,#6366f1);
 color:white;
 font-weight:600;
-border-radius:8px;
 cursor:pointer;
 transition:0.4s;
 }
 
 button:hover{
-transform:scale(1.05);
+transform:scale(1.08);
 }
 
 /* Sections */
 
 section{
-padding:90px 70px;
+padding:100px 70px;
 }
 
 h2{
-margin-bottom:25px;
 color:#38bdf8;
+margin-bottom:25px;
 }
 
-/* Cards */
+/* Glass Cards */
 
 .card{
-background:rgba(30,41,59,0.6);
-backdrop-filter:blur(10px);
-padding:28px;
-border-radius:15px;
+background:rgba(30,41,59,0.45);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:18px;
 margin-top:20px;
 transition:0.4s;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.02);
-background:rgba(51,65,85,0.8);
+transform:translateY(-10px) scale(1.03);
+background:rgba(51,65,85,0.6);
 }
 
 /* Grid */
@@ -163,32 +204,33 @@ color:#38bdf8;
 
 footer{
 text-align:center;
-padding:30px;
+padding:35px;
 background:#020617;
 }
 
 /* Animations */
 
 @keyframes fadeIn{
-from{opacity:0;transform:translateY(50px);}
+from{opacity:0;transform:translateY(60px);}
 to{opacity:1;transform:translateY(0);}
 }
 
 @keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
+0%{transform:translateY(0);}
+100%{transform:translateY(-30px);}
 }
 
 /* Mobile */
 
 @media(max-width:900px){
+
 .hero{
 flex-direction:column;
 text-align:center;
 }
 
 .profile-img{
-margin-top:40px;
+margin-top:50px;
 width:250px;
 height:250px;
 }
@@ -196,6 +238,11 @@ height:250px;
 nav{
 padding:20px;
 }
+
+.hero h1{
+font-size:2.5rem;
+}
+
 }
 
 </style>
@@ -203,13 +250,17 @@ padding:20px;
 
 <body>
 
+<div class="background">
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+</div>
+
 <nav>
 <h2>Edwin.</h2>
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#resume">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Impact</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -218,10 +269,11 @@ padding:20px;
 
 <div class="hero-text">
 <h1>Edwin William <span>Otieno</span></h1>
+
 <h2 id="typing"></h2>
 
 <p>
-Finance and accounting professional specializing in financial reporting, taxation compliance, audit support, and ERP financial systems. Passionate about accuracy, risk control, and business performance optimization.
+Finance and accounting professional specializing in financial reporting, taxation compliance, audit support, and ERP systems. Focused on accuracy, risk management, and business performance improvement.
 </p>
 
 <a href="OTIENO EDWIN WILLIAMS CV 2026.pdf" download>
@@ -236,7 +288,7 @@ Finance and accounting professional specializing in financial reporting, taxatio
 <section id="about">
 <h2>About Me</h2>
 <div class="card">
-Bachelor of Science in Finance graduate from The Cooperative University of Kenya. Currently pursuing CPA Intermediate Level Part III. Experienced in accounts processing, reconciliations, audit assistance, and financial reporting systems.
+Bachelor of Science in Finance graduate from The Cooperative University of Kenya. Currently pursuing CPA Intermediate Level Part III. Experienced in accounting operations, audit assistance, and financial compliance.
 </div>
 </section>
 
@@ -245,12 +297,12 @@ Bachelor of Science in Finance graduate from The Cooperative University of Kenya
 
 <div class="card">
 <h3>Assistant Accountant – Tedkraft Medical Supplies</h3>
-<p>Handled invoice processing, vendor reconciliation, and ERP financial entries. Supported monthly financial close processes and reporting activities while maintaining compliance documentation.</p>
+<p>Processed invoices, supported vendor reconciliation, and assisted ERP financial data migration. Improved close cycle efficiency and maintained compliance documentation.</p>
 </div>
 
 <div class="card">
 <h3>Finance Intern – Kenya Revenue Authority</h3>
-<p>Supported taxpayer audit processes, assisted revenue tracking, and contributed to financial data verification tasks within internal control frameworks.</p>
+<p>Assisted audit verification processes, revenue tracking, and financial data validation under internal control supervision.</p>
 </div>
 
 </section>
@@ -260,7 +312,7 @@ Bachelor of Science in Finance graduate from The Cooperative University of Kenya
 
 <div class="grid">
 <div class="card">Financial Reporting</div>
-<div class="card">Advanced Excel</div>
+<div class="card">Advanced Excel Analytics</div>
 <div class="card">Tax Compliance</div>
 <div class="card">Audit Support</div>
 <div class="card">ERP Systems</div>
@@ -278,7 +330,7 @@ Bachelor of Science in Finance graduate from The Cooperative University of Kenya
 📍 Nairobi, Kenya<br><br>
 📞 0708081210<br><br>
 📧 <a href="mailto:Otienowilliam86@gmail.com">Otienowilliam86@gmail.com</a><br><br>
-LinkedIn: <a href="https://www.linkedin.com/in/otieno-william" target="_blank">Profile</a>
+LinkedIn Profile Available
 </div>
 
 </section>
@@ -291,32 +343,28 @@ LinkedIn: <a href="https://www.linkedin.com/in/otieno-william" target="_blank">P
 
 /* Typing Animation */
 
-const texts = [
+const texts=[
 "Finance Professional",
 "CPA Candidate",
-"Accounting Specialist",
-"Audit & Compliance Focused"
+"Accounting & Audit Specialist",
+"Financial Compliance Focused"
 ];
 
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+let count=0;
+let index=0;
 
 function type(){
-if(count === texts.length) count = 0;
+let current=texts[count];
+let letter=current.slice(0,++index);
 
-currentText = texts[count];
-letter = currentText.slice(0, ++index);
+document.getElementById("typing").textContent=letter;
 
-document.getElementById("typing").textContent = letter;
-
-if(letter.length === currentText.length){
-count++;
-index = 0;
-setTimeout(type, 1500);
+if(letter.length===current.length){
+count=(count+1)%texts.length;
+index=0;
+setTimeout(type,1500);
 }else{
-setTimeout(type, 80);
+setTimeout(type,80);
 }
 }
 
