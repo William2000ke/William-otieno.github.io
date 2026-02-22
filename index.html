@@ -1,187 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edwin William Otieno | Finance Professional</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Otieno Edwin William | Finance Professional</title>
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,700" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i" rel="stylesheet"/>
 
 <style>
 
-/* ===== GLOBAL ===== */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-scroll-behavior:smooth;
-}
+/* ===== GLOBAL STYLE ===== */
 
 body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:radial-gradient(circle,#020617,#0f172a,#020617);
 color:white;
-background: radial-gradient(circle at top,#020617,#0f172a,#020617);
-overflow-x:hidden;
 }
 
-/* ===== BACKGROUND GLOW ===== */
+/* Navbar */
 
-.background{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-}
-
-.circle{
-position:absolute;
-border-radius:50%;
-filter:blur(80px);
-opacity:0.35;
-animation:float 12s infinite alternate;
-}
-
-.c1{
-width:450px;
-height:450px;
-background:#38bdf8;
-top:10%;
-left:10%;
-}
-
-.c2{
-width:550px;
-height:550px;
-background:#6366f1;
-bottom:5%;
-right:8%;
-}
-
-/* ===== NAVBAR ===== */
-
-nav{
+.navbar{
+padding:20px;
 display:flex;
 justify-content:space-between;
-padding:20px 70px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
 position:fixed;
 width:100%;
-backdrop-filter:blur(18px);
-background:rgba(2,6,23,0.7);
+top:0;
 z-index:1000;
 }
 
-nav h2{
+.brand{
+font-weight:700;
 color:#38bdf8;
+font-size:24px;
 }
 
-nav ul{
-display:flex;
-list-style:none;
-}
-
-nav li{
-margin-left:25px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
-
-/* ===== HERO ===== */
+/* Hero */
 
 .hero{
 min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:140px 70px 60px;
-animation:fadeIn 1.5s ease;
-}
-
-.hero-text{
-max-width:650px;
+padding:140px 80px 60px;
 }
 
 .hero h1{
-font-size:3.8rem;
+font-size:3.5rem;
 }
 
 .hero span{
 color:#38bdf8;
 }
 
-#typing{
-margin-top:15px;
-color:#94a3b8;
-min-height:30px;
-}
-
-/* Profile Image Spotlight */
-
 .profile-img{
-width:330px;
-height:330px;
+width:320px;
+height:320px;
 border-radius:50%;
 object-fit:cover;
-box-shadow:
-0 0 60px rgba(56,189,248,0.7),
-0 0 120px rgba(99,102,241,0.4);
-animation:float 5s ease-in-out infinite;
-}
-
-/* Button */
-
-button{
-margin-top:30px;
-padding:15px 32px;
-border:none;
-border-radius:12px;
-background:linear-gradient(45deg,#38bdf8,#6366f1);
-color:white;
-font-weight:600;
-cursor:pointer;
-transition:0.4s;
-}
-
-button:hover{
-transform:scale(1.08);
+box-shadow:0 0 50px rgba(56,189,248,0.6);
 }
 
 /* Sections */
 
 section{
-padding:100px 70px;
+padding:80px;
 }
-
-h2{
-color:#38bdf8;
-margin-bottom:25px;
-}
-
-/* Glass Cards */
 
 .card{
-background:rgba(30,41,59,0.45);
-backdrop-filter:blur(15px);
+background:rgba(30,41,59,0.5);
 padding:30px;
-border-radius:20px;
+border-radius:15px;
 margin-top:20px;
 transition:0.4s;
-border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.03);
+transform:translateY(-10px);
 }
 
-/* Grid */
+/* Skills Grid */
 
 .grid{
 display:grid;
@@ -189,212 +92,156 @@ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
-/* WhatsApp Floating Button */
-
-.whatsapp{
-position:fixed;
-bottom:30px;
-right:30px;
-background:#25D366;
-padding:18px;
-border-radius:50%;
-font-size:22px;
-box-shadow:0 0 20px rgba(0,0,0,0.3);
-}
-
-.whatsapp a{
-color:white;
-text-decoration:none;
-}
-
 /* Footer */
 
 footer{
 text-align:center;
 padding:40px;
-background:#020617;
-}
-
-/* Animations */
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(60px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-100%{transform:translateY(-35px);}
+background:black;
 }
 
 /* Mobile */
 
 @media(max-width:900px){
-
 .hero{
 flex-direction:column;
 text-align:center;
 }
 
 .profile-img{
-margin-top:50px;
-width:240px;
-height:240px;
+margin-top:40px;
 }
 
-nav{
-padding:20px;
+section{
+padding:40px 20px;
 }
-
-.hero h1{
-font-size:2.6rem;
-}
-
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="background">
-<div class="circle c1"></div>
-<div class="circle c2"></div>
+<div class="navbar">
+<div class="brand">Otieno.</div>
+<div>Finance Professional Portfolio</div>
 </div>
-
-<nav>
-<h2>Edwin.</h2>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Impact</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
 
 <section class="hero">
 
-<div class="hero-text">
-<h1>Edwin William <span>Otieno</span></h1>
+<div>
+<h1>OTIENO <span>EDWIN WILLIAM</span></h1>
 
-<h2 id="typing"></h2>
+<h3>Finance & Accounting Professional</h3>
 
 <p>
-Finance professional specializing in accounting operations, audit assistance, financial compliance, ERP systems, and data-driven reporting. Dedicated to accuracy, governance, and business performance improvement.
+Proactive and detail-oriented Finance and Accounting professional with over 2 years of hands-on experience in accounts payable and receivable, bank reconciliations, audit support, budgeting, and financial reporting. Demonstrated ability to work with ERP systems including QuickBooks and Zoho Books, with strong knowledge of IFRS and Kenyan tax regulations.
 </p>
-
-<a href="OTIENO EDWIN WILLIAMS CV 2026.pdf" download>
-<button>Download Professional CV</button>
-</a>
 </div>
 
-<img src="https://via.placeholder.com/400" class="profile-img">
+<img src="assets/images/profile.jpg" class="profile-img"/>
 
 </section>
 
-<section id="about">
-<h2>Professional Summary</h2>
-<div class="card">
-Finance and accounting professional with experience in invoice processing, reconciliation, audit support, and revenue verification. Bachelor of Science in Finance graduate from The Cooperative University of Kenya and CPA Intermediate candidate focused on professional certification.
-</div>
-</section>
-
-<section id="experience">
-<h2>Work Experience</h2>
-
-<div class="card">
-<h3>Assistant Accountant – Tedkraft Medical Supplies</h3>
-<p>Processed high-volume invoices, maintained vendor records, performed monthly reconciliation, and supported ERP financial system operations to improve reporting efficiency.</p>
-</div>
-
-<div class="card">
-<h3>Finance Intern – Kenya Revenue Authority</h3>
-<p>Assisted audit verification, revenue monitoring, financial data validation, and internal control documentation within regulatory frameworks.</p>
-</div>
-
-</section>
-
-<section id="skills">
-<h2>Technical & Professional Skills</h2>
-
-<div class="grid">
-<div class="card">Financial Reporting</div>
-<div class="card">Advanced Excel Analytics</div>
-<div class="card">Tax Compliance</div>
-<div class="card">Audit Assistance</div>
-<div class="card">ERP Financial Systems</div>
-<div class="card">Bank Reconciliation</div>
-<div class="card">IFRS Knowledge</div>
-<div class="card">Financial Modeling</div>
-</div>
-
-</section>
-
-<section id="projects">
-<h2>Key Impact Achievements</h2>
-
-<div class="card">
-✔ Reduced month-end close time by process optimization.<br><br>
-✔ Improved invoice retrieval efficiency.<br><br>
-✔ Supported automation of accounting postings.<br><br>
-✔ Maintained audit compliance accuracy above 95%.
-</div>
-
-</section>
-
-<section id="contact">
+<section>
 <h2>Contact Information</h2>
 
 <div class="card">
-📍 Nairobi, Kenya<br><br>
-📞 0708081210<br><br>
-📧 Otienowilliam86@gmail.com<br><br>
-Professional LinkedIn profile available.
+📍 Nairobi-Kenya<br/>
+📞 0708081210<br/>
+📧 Otienowilliam86@gmail.com<br/>
+LinkedIn: www.linkedin.com/in/otieno-william
+</div>
+</section>
+
+<section>
+<h2>Professional Skills</h2>
+
+<div class="grid">
+
+<div class="card">Financial Reporting & Analysis</div>
+<div class="card">Advanced Excel (Pivot Tables, VLOOKUP)</div>
+<div class="card">Taxation Compliance</div>
+<div class="card">Risk Management</div>
+<div class="card">P&L Management</div>
+<div class="card">ERP Systems (QuickBooks, Zoho)</div>
+<div class="card">Accounts Payable & Receivable</div>
+<div class="card">Bank Reconciliation</div>
+
+</div>
+</section>
+
+<section>
+<h2>Work History</h2>
+
+<div class="card">
+<h3>Assistant Accountant – Tedkraft Medical Supplies (JAN 2025 – Present)</h3>
+
+<ul>
+<li>Processed over 500 invoices ensuring payment accuracy.</li>
+<li>Conducted monthly multi-account bank reconciliations.</li>
+<li>Prepared P&L and balance sheets under supervision.</li>
+<li>Supported procurement and vendor verification.</li>
+<li>Reduced month-end closing time by 15% through Zoho Books migration.</li>
+<li>Improved invoice retrieval speed by 40% via digital filing.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Finance Assistant – Kenya Revenue Authority (2023 – 2024)</h3>
+
+<ul>
+<li>Supported budget tracking and payment processing.</li>
+<li>Assisted in 100+ taxpayer audit verifications.</li>
+<li>Automated invoice postings reducing workload by 30%.</li>
+<li>Assisted revenue forecasting and financial reporting.</li>
+<li>Supported internal audit discrepancy resolution.</li>
+</ul>
+</div>
+
+</section>
+
+<section>
+<h2>Education</h2>
+
+<div class="card">
+Bachelor of Science in Finance<br/>
+The Cooperative University of Kenya<br/>
+Second Class Upper Division (Graduated Dec 2022)
+</div>
+</section>
+
+<section>
+<h2>Certifications</h2>
+
+<div class="card">
+CIPIT Data Protection Course – Strathmore University (2025)<br/>
+CPA Intermediate Level Part III – Ongoing<br/>
+Financial Modeling – Self Study<br/>
+SAP Training – Company Sponsored
+</div>
+</section>
+
+<section>
+<h2>Referees</h2>
+
+<div class="card">
+Deborah Mwende – KRA Compliance Officer<br/>
+0720667184 | Deborah.Mwanzia@kra.go.ke
+<br><br>
+Martin Muthee – Compliance Officer<br/>
+0714649306 | Martinmuthee45@gmail.com
+<br><br>
+Mr. Teddy Collins – Sales Executive<br/>
+0702107658 | Otienocollinsteddy@gmail.com
 </div>
 
 </section>
 
 <footer>
-© 2026 Edwin William Otieno | Finance Professional Portfolio
+© 2025 Otieno Edwin William | Finance Portfolio
 </footer>
-
-<div class="whatsapp">
-<a href="https://wa.me/254708081210" target="_blank">💬</a>
-</div>
-
-<script>
-
-/* Typing Animation */
-
-const texts=[
-"Finance Professional",
-"CPA Intermediate Candidate",
-"Audit & Compliance Specialist",
-"Accounting Operations Expert"
-];
-
-let count=0;
-let index=0;
-
-function type(){
-let current=texts[count];
-let letter=current.slice(0,++index);
-
-document.getElementById("typing").textContent=letter;
-
-if(letter.length===current.length){
-count=(count+1)%texts.length;
-index=0;
-setTimeout(type,1500);
-}else{
-setTimeout(type,80);
-}
-}
-
-type();
-
-</script>
 
 </body>
 </html>
