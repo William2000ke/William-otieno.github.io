@@ -25,7 +25,7 @@ background: radial-gradient(circle at top,#020617,#0f172a,#020617);
 overflow-x:hidden;
 }
 
-/* ===== BACKGROUND ANIMATION ===== */
+/* ===== BACKGROUND GLOW ===== */
 
 .background{
 position:fixed;
@@ -37,25 +37,25 @@ z-index:-1;
 .circle{
 position:absolute;
 border-radius:50%;
-filter:blur(60px);
-opacity:0.4;
-animation:float 10s infinite alternate;
+filter:blur(80px);
+opacity:0.35;
+animation:float 12s infinite alternate;
 }
 
 .c1{
-width:400px;
-height:400px;
+width:450px;
+height:450px;
 background:#38bdf8;
 top:10%;
-left:15%;
+left:10%;
 }
 
 .c2{
-width:500px;
-height:500px;
+width:550px;
+height:550px;
 background:#6366f1;
-bottom:10%;
-right:10%;
+bottom:5%;
+right:8%;
 }
 
 /* ===== NAVBAR ===== */
@@ -66,7 +66,7 @@ justify-content:space-between;
 padding:20px 70px;
 position:fixed;
 width:100%;
-backdrop-filter:blur(15px);
+backdrop-filter:blur(18px);
 background:rgba(2,6,23,0.7);
 z-index:1000;
 }
@@ -123,30 +123,26 @@ color:#94a3b8;
 min-height:30px;
 }
 
-.hero p{
-margin-top:25px;
-line-height:1.8;
-opacity:0.9;
-}
-
-/* Profile Image */
+/* Profile Image Spotlight */
 
 .profile-img{
-width:320px;
-height:320px;
+width:330px;
+height:330px;
 border-radius:50%;
 object-fit:cover;
-box-shadow:0 0 50px rgba(56,189,248,0.6);
+box-shadow:
+0 0 60px rgba(56,189,248,0.7),
+0 0 120px rgba(99,102,241,0.4);
 animation:float 5s ease-in-out infinite;
 }
 
-/* Buttons */
+/* Button */
 
 button{
 margin-top:30px;
-padding:15px 30px;
+padding:15px 32px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 background:linear-gradient(45deg,#38bdf8,#6366f1);
 color:white;
 font-weight:600;
@@ -173,9 +169,9 @@ margin-bottom:25px;
 
 .card{
 background:rgba(30,41,59,0.45);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(15px);
 padding:30px;
-border-radius:18px;
+border-radius:20px;
 margin-top:20px;
 transition:0.4s;
 border:1px solid rgba(255,255,255,0.05);
@@ -183,7 +179,6 @@ border:1px solid rgba(255,255,255,0.05);
 
 .card:hover{
 transform:translateY(-10px) scale(1.03);
-background:rgba(51,65,85,0.6);
 }
 
 /* Grid */
@@ -194,17 +189,29 @@ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
-/* Contact */
+/* WhatsApp Floating Button */
 
-.contact a{
-color:#38bdf8;
+.whatsapp{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#25D366;
+padding:18px;
+border-radius:50%;
+font-size:22px;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.whatsapp a{
+color:white;
+text-decoration:none;
 }
 
 /* Footer */
 
 footer{
 text-align:center;
-padding:35px;
+padding:40px;
 background:#020617;
 }
 
@@ -217,7 +224,7 @@ to{opacity:1;transform:translateY(0);}
 
 @keyframes float{
 0%{transform:translateY(0);}
-100%{transform:translateY(-30px);}
+100%{transform:translateY(-35px);}
 }
 
 /* Mobile */
@@ -231,8 +238,8 @@ text-align:center;
 
 .profile-img{
 margin-top:50px;
-width:250px;
-height:250px;
+width:240px;
+height:240px;
 }
 
 nav{
@@ -240,7 +247,7 @@ padding:20px;
 }
 
 .hero h1{
-font-size:2.5rem;
+font-size:2.6rem;
 }
 
 }
@@ -259,8 +266,9 @@ font-size:2.5rem;
 <h2>Edwin.</h2>
 <ul>
 <li><a href="#about">About</a></li>
-<li><a href="#resume">Experience</a></li>
+<li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Impact</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -273,49 +281,49 @@ font-size:2.5rem;
 <h2 id="typing"></h2>
 
 <p>
-Finance and accounting professional specializing in financial reporting, taxation compliance, audit support, and ERP systems. Focused on accuracy, risk management, and business performance improvement.
+Finance professional specializing in accounting operations, audit assistance, financial compliance, ERP systems, and data-driven reporting. Dedicated to accuracy, governance, and business performance improvement.
 </p>
 
 <a href="OTIENO EDWIN WILLIAMS CV 2026.pdf" download>
-<button>Download CV</button>
+<button>Download Professional CV</button>
 </a>
 </div>
 
-<img src="https://via.placeholder.com/350" class="profile-img">
+<img src="https://via.placeholder.com/400" class="profile-img">
 
 </section>
 
 <section id="about">
-<h2>About Me</h2>
+<h2>Professional Summary</h2>
 <div class="card">
-Bachelor of Science in Finance graduate from The Cooperative University of Kenya. Currently pursuing CPA Intermediate Level Part III. Experienced in accounting operations, audit assistance, and financial compliance.
+Finance and accounting professional with experience in invoice processing, reconciliation, audit support, and revenue verification. Bachelor of Science in Finance graduate from The Cooperative University of Kenya and CPA Intermediate candidate focused on professional certification.
 </div>
 </section>
 
-<section id="resume">
-<h2>Experience</h2>
+<section id="experience">
+<h2>Work Experience</h2>
 
 <div class="card">
 <h3>Assistant Accountant – Tedkraft Medical Supplies</h3>
-<p>Processed invoices, supported vendor reconciliation, and assisted ERP financial data migration. Improved close cycle efficiency and maintained compliance documentation.</p>
+<p>Processed high-volume invoices, maintained vendor records, performed monthly reconciliation, and supported ERP financial system operations to improve reporting efficiency.</p>
 </div>
 
 <div class="card">
 <h3>Finance Intern – Kenya Revenue Authority</h3>
-<p>Assisted audit verification processes, revenue tracking, and financial data validation under internal control supervision.</p>
+<p>Assisted audit verification, revenue monitoring, financial data validation, and internal control documentation within regulatory frameworks.</p>
 </div>
 
 </section>
 
 <section id="skills">
-<h2>Professional Skills</h2>
+<h2>Technical & Professional Skills</h2>
 
 <div class="grid">
 <div class="card">Financial Reporting</div>
 <div class="card">Advanced Excel Analytics</div>
 <div class="card">Tax Compliance</div>
-<div class="card">Audit Support</div>
-<div class="card">ERP Systems</div>
+<div class="card">Audit Assistance</div>
+<div class="card">ERP Financial Systems</div>
 <div class="card">Bank Reconciliation</div>
 <div class="card">IFRS Knowledge</div>
 <div class="card">Financial Modeling</div>
@@ -323,21 +331,37 @@ Bachelor of Science in Finance graduate from The Cooperative University of Kenya
 
 </section>
 
+<section id="projects">
+<h2>Key Impact Achievements</h2>
+
+<div class="card">
+✔ Reduced month-end close time by process optimization.<br><br>
+✔ Improved invoice retrieval efficiency.<br><br>
+✔ Supported automation of accounting postings.<br><br>
+✔ Maintained audit compliance accuracy above 95%.
+</div>
+
+</section>
+
 <section id="contact">
-<h2>Contact</h2>
+<h2>Contact Information</h2>
 
 <div class="card">
 📍 Nairobi, Kenya<br><br>
 📞 0708081210<br><br>
-📧 <a href="mailto:Otienowilliam86@gmail.com">Otienowilliam86@gmail.com</a><br><br>
-LinkedIn Profile Available
+📧 Otienowilliam86@gmail.com<br><br>
+Professional LinkedIn profile available.
 </div>
 
 </section>
 
 <footer>
-© 2026 Edwin William Otieno | Finance Professional
+© 2026 Edwin William Otieno | Finance Professional Portfolio
 </footer>
+
+<div class="whatsapp">
+<a href="https://wa.me/254708081210" target="_blank">💬</a>
+</div>
 
 <script>
 
@@ -345,9 +369,9 @@ LinkedIn Profile Available
 
 const texts=[
 "Finance Professional",
-"CPA Candidate",
-"Accounting & Audit Specialist",
-"Financial Compliance Focused"
+"CPA Intermediate Candidate",
+"Audit & Compliance Specialist",
+"Accounting Operations Expert"
 ];
 
 let count=0;
